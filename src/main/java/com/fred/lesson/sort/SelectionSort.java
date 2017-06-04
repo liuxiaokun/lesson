@@ -9,7 +9,7 @@ public class SelectionSort {
 
     public static void main(String[] args) {
 
-        int[] arr = {5, 4, 3, 2, 1};
+        int[] arr = {51, 141, 3, 22, 131};
         System.out.println(Arrays.toString(selectionSort(arr)));
 
     }
@@ -18,19 +18,19 @@ public class SelectionSort {
 
         int len = ori.length;
 
-        for (int i = 0; i < len; i++) {
+        for (int i = 0; i < len - 1; i++) {
 
             //寻找【ｉ,n）区间的最小值
             int minIndex = i;
 
-            for (int j = i + 1; j < len; j++) {
+            for (int j = i + 1; j < len ; j++) {
 
                 if (ori[minIndex] > ori[j]) {
                     minIndex = j;
                 }
-                //一次外循环只交换一次
-                swap(ori, i, minIndex);
             }
+            //一次外循环只交换一次
+            swap(ori, i, minIndex);
         }
         return ori;
     }
